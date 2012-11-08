@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name"       : "Yammer for Developers",
+  "description": "The code formater and highlighter in Yammer's messages.",
+  "version"    : "0.1.1",
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.yammer.com/*"],
+      "css"    : ["vs.css", "y4d.css"],
+      "js"     : ["highlight.pack.js", "y4d.js"]
+    }
+  ]
+}
