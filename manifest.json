@@ -3,7 +3,7 @@
 
   "name"       : "Yammer for Developers",
   "description": "The code formater and highlighter in Yammer's messages.",
-  "version"    : "0.1.1",
+  "version"    : "0.1.2",
 
   "content_scripts": [
     {
