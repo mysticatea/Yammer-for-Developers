@@ -1,0 +1,40 @@
+/* Yammer for Developers (y4d) v0.1.2
+ * (C) 2012 Toru Nagashima <https://github.com/mysticatea>.
+ */
+
+.y4d-code {
+  box-sizing   : border-box;
+  padding      : 4px;
+  font-family  : Monaco, Menlo, Consolas, "Droid Sans Mono", "Inconsolata", "Courier New", monospace;
+  font-size    : 12px;
+  line-height  : 14px;
+  white-space  : pre;
+  word-wrap    : normal;
+  background   : #FBFBFB;
+  border       : 1px solid #D7D7D7;
+  border-radius: 3px;
+  cursor       : text;
+}
+
+.y4d-code.block {
+  display   : block;
+  width     : 100%;
+  height    : auto;
+  max-width : 160%;
+  max-height: 320px;
+  overflow  : auto;
+  margin    : 8px 0;
+}
+
+.y4d-code.inline {
+  display: inline;
+  margin : 4px;
+}
+
+.y4d-bold {
+  font-weight: bold;
+}
+
+.y4d-italic {
+  font-style: italic;
+}
