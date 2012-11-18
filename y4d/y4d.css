@@ -1,10 +1,9 @@
-/* Yammer for Developers (y4d) v0.1.2
+/* Yammer for Developers (y4d) v0.2.0
  * (C) 2012 Toru Nagashima <https://github.com/mysticatea>.
  */
 
 .y4d-code {
   box-sizing   : border-box;
-  padding      : 4px;
   font-family  : Monaco, Menlo, Consolas, "Droid Sans Mono", "Inconsolata", "Courier New", monospace;
   font-size    : 12px;
   line-height  : 14px;
@@ -16,25 +15,76 @@
   cursor       : text;
 }
 
-.y4d-code.block {
-  display   : block;
-  width     : 100%;
-  height    : auto;
-  max-width : 160%;
-  max-height: 320px;
-  overflow  : auto;
-  margin    : 8px 0;
+/* code block */
+
+div.y4d-code {
+  box-sizing     : border-box;
+  width          : 100%;
+  height         : auto;
+  max-width      : 160%;
+  max-height     : 320px;
+  overflow-y     : auto;
+  margin         : 8px 0;
+  padding        : 0;
 }
 
-.y4d-code.inline {
-  display: inline;
-  margin : 4px;
+div.y4d-code table {
+  box-sizing     : border-box;
+  width          : 100%;
+  height         : auto;
+  margin         : 0;
+  padding        : 0;
+  font           : inherit;
+  border-collapse: collapse;
+}
+
+div.y4d-code td {
+  box-sizing: border-box;
+  width     : auto;
+  height    : auto;
+  margin    : 0;
+  padding   : 4px;
+  font      : inherit;
+}
+
+div.y4d-code td:first-child {
+  width       : 10px;
+  text-align  : right;
+  background  : #D7D7D7;
+  border-right: 1px solid white;
+}
+
+/* inline elements */
+
+span.y4d-code {
+  display: inline-block;
+  margin : 2px;
+  padding: 2px;
 }
 
 .y4d-bold {
   font-weight: bold;
 }
 
+.y4d-bold .y4d-bold {
+  font-size   : 110%;
+  font-variant: small-caps;
+  font-weight : 900;
+}
+
 .y4d-italic {
   font-style: italic;
+}
+
+.y4d-underline {
+  text-decoration: underline;
+}
+
+.y4d-delete {
+  text-decoration: line-through;
+}
+
+.y4d-underline .y4d-delete,
+.y4d-delete .y4d-underline {
+  text-decoration: line-through underline;
 }

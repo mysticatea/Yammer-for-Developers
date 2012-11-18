@@ -3,84 +3,81 @@
 Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
 
 */
-pre code {
-  display: block; padding: 0.5em;
-}
 
-pre .comment,
-pre .annotation,
-pre .template_comment,
-pre .diff .header,
-pre .chunk,
-pre .apache .cbracket {
+.y4d-code .comment,
+.y4d-code .annotation,
+.y4d-code .template_comment,
+.y4d-code .diff .header,
+.y4d-code .chunk,
+.y4d-code .apache .cbracket {
   color: rgb(0, 128, 0);
 }
 
-pre .keyword,
-pre .id,
-pre .built_in,
-pre .smalltalk .class,
-pre .winutils,
-pre .bash .variable,
-pre .tex .command,
-pre .request,
-pre .status,
-pre .nginx .title,
-pre .xml .tag,
-pre .xml .tag .value {
+.y4d-code .keyword,
+.y4d-code .id,
+.y4d-code .built_in,
+.y4d-code .smalltalk .class,
+.y4d-code .winutils,
+.y4d-code .bash .variable,
+.y4d-code .tex .command,
+.y4d-code .request,
+.y4d-code .status,
+.y4d-code .nginx .title,
+.y4d-code .xml .tag,
+.y4d-code .xml .tag .value {
   color: rgb(0, 0, 255);
 }
 
-pre .string,
-pre .title,
-pre .parent,
-pre .tag .value,
-pre .rules .value,
-pre .rules .value .number,
-pre .ruby .symbol,
-pre .ruby .symbol .string,
-pre .aggregate,
-pre .template_tag,
-pre .django .variable,
-pre .addition,
-pre .flow,
-pre .stream,
-pre .apache .tag,
-pre .date,
-pre .tex .formula {
+.y4d-code .string,
+.y4d-code .title,
+.y4d-code .parent,
+.y4d-code .tag .value,
+.y4d-code .rules .value,
+.y4d-code .rules .value .number,
+.y4d-code .ruby .symbol,
+.y4d-code .ruby .symbol .string,
+.y4d-code .aggregate,
+.y4d-code .template_tag,
+.y4d-code .django .variable,
+.y4d-code .addition,
+.y4d-code .flow,
+.y4d-code .stream,
+.y4d-code .apache .tag,
+.y4d-code .date,
+.y4d-code .tex .formula {
   color: rgb(163, 21, 21);
 }
 
-pre .ruby .string,
-pre .decorator,
-pre .filter .argument,
-pre .localvars,
-pre .array,
-pre .attr_selector,
-pre .pseudo,
-pre .pi,
-pre .doctype,
-pre .deletion,
-pre .envvar,
-pre .shebang,
-pre .preprocessor,
-pre .userType,
-pre .apache .sqbracket,
-pre .nginx .built_in,
-pre .tex .special,
-pre .prompt {
+.y4d-code .ruby .string,
+.y4d-code .decorator,
+.y4d-code .filter .argument,
+.y4d-code .localvars,
+.y4d-code .array,
+.y4d-code .attr_selector,
+.y4d-code .pseudo,
+.y4d-code .pi,
+.y4d-code .doctype,
+.y4d-code .deletion,
+.y4d-code .envvar,
+.y4d-code .shebang,
+.y4d-code .preprocessor,
+.y4d-code .userType,
+.y4d-code .apache .sqbracket,
+.y4d-code .nginx .built_in,
+.y4d-code .tex .special,
+.y4d-code .prompt {
   color: rgb(43, 145, 175);
 }
 
-pre .phpdoc,
-pre .javadoc,
-pre .xmlDocTag {
+.y4d-code .phpdoc,
+.y4d-code .javadoc,
+.y4d-code .xmlDocTag {
   color: rgb(128, 128, 128);
 }
 
-pre .vhdl .typename { font-weight: bold; }
-pre .vhdl .string { color: #666666; }
-pre .vhdl .literal { color: rgb(163, 21, 21); }
-pre .vhdl .attribute { color: #00B0E8; }
+.y4d-code .vhdl .typename { font-weight: bold; }
+.y4d-code .vhdl .string { color: #666666; }
+.y4d-code .vhdl .literal { color: rgb(163, 21, 21); }
+.y4d-code .vhdl .attribute { color: #00B0E8; }
 
-pre .xml .attribute { color: rgb(255, 0, 0); }
+.y4d-code .xml .attribute { color: rgb(255, 0, 0); }

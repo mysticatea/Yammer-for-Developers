@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+  <meta charset="UTF-8">
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.2.0/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.2.0/jasmine.css">
+  <script src="lib/jasmine-1.2.0/jasmine.js"></script>
+  <script src="lib/jasmine-1.2.0/jasmine-html.js"></script>
+
+  <!-- include source files here... -->
+  <script src="../y4d/highlight.pack.js"></script>
+  <script src="../y4d/ContentFormatter.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="ContentFormatterSpec.js"></script>
+
+  <script>
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
