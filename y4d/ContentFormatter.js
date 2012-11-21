@@ -24,8 +24,8 @@ var ContentFormatter = {
     var rExcapeChars     = /[<>&]/g;
     var rSpanOpen        = /<span/g;
     var rSpanClose       = /<\/span/g;
-    var rExpandLink      = /<a class="expand-body yj-small" href="javascript:\/\/">expand&nbsp;»<\/a><span class="remaining-body" style="display:none;">/;
-    var rCollapseLink    = /<\/span>&nbsp;<a class="collapse-body yj-small" href="javascript:\/\/" style="display:none;">«&nbsp;collapse<\/a>/;
+    var rExpandLink      = /<a class="expand-body yj-small" href="javascript:\/\/">.+?<\/a><span class="remaining-body" style="display:none;">/;
+    var rCollapseLink    = /<\/span>&nbsp;<a class="collapse-body yj-small" href="javascript:\/\/" style="display:none;">.+?<\/a>/;
 
     var RCMap = {
       '　'   : ' ',
@@ -179,6 +179,10 @@ var ContentFormatter = {
         else if (m[0] === '<') {
           // enter tag. skip until exit.
           i = skipUntil(rCloseTag, m.index, content);
+        }
+        else if (m.index === head) {
+          // empty.
+          i = end = m.index + 1;
         }
         else {
           // closer found.

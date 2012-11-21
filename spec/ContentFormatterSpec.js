@@ -7,6 +7,11 @@
 
 describe('ContentFormater:', function () {
   describe('format method', function () {
+    var expandLink      = '<a class="expand-body yj-small" href="javascript://">expand&nbsp;»</a><span class="remaining-body" style="display:none;">';
+    var collapseLink    = '</span>&nbsp;<a class="collapse-body yj-small" href="javascript://" style="display:none;">«&nbsp;collapse</a>';
+    var expandLinkJp    = '<a class="expand-body yj-small" href="javascript://">展開&nbsp;»</a><span class="remaining-body" style="display:none;">';
+    var collapseLinkJp  = '</span>&nbsp;<a class="collapse-body yj-small" href="javascript://" style="display:none;">«&nbsp;折り畳む</a>';
+
     var format = ContentFormatter.format;
 
     var inlineFormats = [
@@ -85,6 +90,17 @@ describe('ContentFormater:', function () {
               });
             });
           });
+
+        it('if the decorated part has an expand link, then moves the link to out of the decorated part', function () {
+          var result = format(wrapWithSign(sign, 'foo' + expandLink + 'foo') + ' bar' + collapseLink);
+          expect(result).toBe(wrapWithTag(style, 'foofoo') + expandLink + ' bar' + collapseLink);
+        });
+
+        it('if the decorated part has an expand link, then moves the link to out of the decorated part (language: jp)', function () {
+          var result = format(wrapWithSign(sign, 'foo' + expandLinkJp + 'foo') + ' bar' + collapseLinkJp);
+          expect(result).toBe(wrapWithTag(style, 'foofoo') + expandLinkJp + ' bar' + collapseLinkJp);
+        });
+
       });
 
       describe('should NOT convert to ' + style + '-style from ' + wrapWithSign(sign, 'foo') + '(s)', function () {
@@ -105,6 +121,11 @@ describe('ContentFormater:', function () {
           invalidText = 'foo' + sign;
           result      = format(invalidText);
           expect(result).toBe(invalidText);
+        });
+
+        it('if the decorated part is empty', function () {
+          var result = format(wrapWithSign(sign, ''));
+          expect(result).toBe(wrapWithSign(sign, ''));
         });
       });
 
