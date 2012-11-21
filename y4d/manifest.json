@@ -4,7 +4,7 @@
   "name"       : "Yammer for Developers",
   "description": "The code formater and highlighter in Yammer's messages.",
   "icons"      : {"128": "icon_128.png"},
-  "version"    : "0.2.0",
+  "version"    : "0.2.1",
 
   "content_scripts": [
     {
