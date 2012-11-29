@@ -1,16 +1,30 @@
 {
   "manifest_version": 2,
 
-  "name"       : "Yammer for Developers",
-  "description": "The code formater and highlighter in Yammer's messages.",
-  "icons"      : {"128": "icon_128.png"},
-  "version"    : "0.2.1",
+  "name"           : "y4d",
+  "description"    : "The code formater and highlighter in Yammer's messages.",
+  "icons"          : {"128": "icon_128.png"},
+  "version"        : "0.3.0",
+  "default_locale" : "en",
+  "offline_enabled": false,
+
+  "permissions": ["alarms", "background", "notifications", "https://www.yammer.com/"],
 
   "content_scripts": [
     {
       "matches": ["https://www.yammer.com/*"],
-      "css"    : ["vs.css", "y4d.css"],
-      "js"     : ["highlight.pack.js", "ContentFormatter.js", "PostFormatter.js", "y4d.js"]
+      "css"    : ["lib/vs.css", "y4d.css"],
+      "js"     : ["lib/highlight.pack.js", "lib/ContentFormatter.js", "lib/PostFormatter.js", "y4d.js"]
     }
-  ]
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "lib/Promise.js",
+      "lib/YammerAPI.js",
+      "lib/NotificationState.js",
+      "message_observer.js"
+    ]
+  },
+  "options_page": "options.html"
 }

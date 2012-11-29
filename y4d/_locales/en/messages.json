@@ -1,0 +1,5 @@
+{
+  "options_notification_enabled_title"      : {"message": "Desktop Notifications"},
+  "options_notification_enabled_description": {"message": "Notifies by the popup when you got new message."},
+  "options_notification_enabled_checkbox"   : {"message": "Enabled"}
+}

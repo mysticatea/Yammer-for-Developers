@@ -1,0 +1,5 @@
+{
+  "options_notification_enabled_title"      : {"message": "デスクトップ通知"},
+  "options_notification_enabled_description": {"message": "あなたのフィードに新規メッセージが投稿されたときにデスクトップ通知を表示します。"},
+  "options_notification_enabled_checkbox"   : {"message": "有効にする"}
+}
