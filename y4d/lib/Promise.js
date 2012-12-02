@@ -1,4 +1,4 @@
-/* Yammer for Developers (y4d) v0.3.1
+/* Yammer for Developers (y4d) v0.3.2
  * (C) 2012 Toru Nagashima <https://github.com/mysticatea>.
  */
 'use strict';
@@ -44,16 +44,21 @@ var Promise = function Promise (f) {
         var callback = a[0];
         var emit     = a[2];
         a[1](function (result) {
-          if (callback != null) {
-            result = callback(result);
-            if (result != null &&
-                typeof result.done === 'function' &&
-                typeof result.fail === 'function' )
-            {
-              return result.done(deferred.resolve).fail(deferred.reject);
+          try {
+            if (callback != null) {
+              result = callback(result);
+              if (result != null &&
+                  typeof result.done === 'function' &&
+                  typeof result.fail === 'function' )
+              {
+                return result.done(deferred.resolve).fail(deferred.reject);
+              }
             }
+            emit(result);
           }
-          emit(result);
+          catch (err) {
+            deferred.reject(err);
+          }
         });
       });
     });

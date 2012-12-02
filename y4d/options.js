@@ -1,4 +1,4 @@
-/* Yammer for Developers (y4d) v0.3.1
+/* Yammer for Developers (y4d) v0.3.2
  * (C) 2012 Toru Nagashima <https://github.com/mysticatea>.
  */
 /*global chrome, NotificationState*/

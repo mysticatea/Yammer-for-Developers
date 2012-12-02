@@ -4,7 +4,7 @@
   "name"           : "y4d",
   "description"    : "The code formater and highlighter in Yammer's messages.",
   "icons"          : {"128": "icon_128.png"},
-  "version"        : "0.3.1",
+  "version"        : "0.3.2",
   "default_locale" : "en",
   "offline_enabled": false,
   "update_url"     : "https://raw.github.com/mysticatea/Yammer-for-Developers/master/out/updates.xml",
@@ -19,7 +19,7 @@
     }
   ],
   "background": {
-    "persistent": false,
+    "persistent": true,
     "scripts": [
       "lib/Promise.js",
       "lib/YammerAPI.js",
