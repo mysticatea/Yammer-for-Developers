@@ -198,18 +198,12 @@ var ContentFormatter = {
     var processCodeBlock = function (lang, i, content) {
       // slice `i` to the end of code-block.
       var m = match(rCloseCodeBlock, i, content);
-      if (m == null) {
-        // close sign not found.
-        return makePair(i, '\n```' + lang + '\n');
-      }
-
-      // process code and wrap tag.
       return makePair(
         rCloseCodeBlock.lastIndex - 1,
         wrapTag(
           'div',
           'code',
-          content.slice(i, m.index),
+          content.slice(i, m ? m.index : content.length),
           function (code) {
             code        = highlight(code, lang);
             var numbers = makeLineNumbers(code);
@@ -220,14 +214,6 @@ var ContentFormatter = {
     };
 
     return function format (content) {
-      // removes collapse link tag.
-      // this link append to the reformatted text later.
-      var collapseLink = '';
-      content = content.replace(rCollapseLink, function (whole) {
-        collapseLink = whole;
-        return '';
-      });
-
       // replaces <br> to \n to simplify searching lines.
       content = '\n' + content.replace(rBR, '\n') + '\n';
 
@@ -269,16 +255,25 @@ var ContentFormatter = {
       return result
         .trim()
         .replace(rCodeBlockWithLN, '</div>')
-        .replace(rLN, '<br>')
-        + collapseLink;
+        .replace(rLN, '<br>');
     };
   })(),
 
-  replaceContent: function (dom) {
-    var before = dom.innerHTML;
-    var after  = ContentFormatter.format(before);
-    if (after !== before) {
-      dom.innerHTML = after;
+  replaceContent: function replaceContent (dom) {
+    // If the element has `truncated-body` and `remaining-body`,
+    // have to replace these element's content.
+    var truncatedBody = dom.querySelector('.truncated-body');
+    var remainingBody = dom.querySelector('.remaining-body');
+    if (truncatedBody && remainingBody) {
+      replaceContent(truncatedBody);
+      replaceContent(remainingBody);
+    }
+    else {
+      var before = dom.innerHTML;
+      var after  = ContentFormatter.format(before);
+      if (after !== before) {
+        dom.innerHTML = after;
+      }
     }
   }
 };

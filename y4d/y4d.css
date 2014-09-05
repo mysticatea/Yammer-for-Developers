@@ -21,9 +21,7 @@ div.y4d-code {
   box-sizing     : border-box;
   width          : 100%;
   height         : auto;
-  max-width      : 160%;
-  max-height     : 320px;
-  overflow-y     : auto;
+  overflow-x     : auto;
   margin         : 8px 0;
   padding        : 0;
 }
