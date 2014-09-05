@@ -18,21 +18,26 @@ After is:
 Features
 --------------------------------------------------------------------------------
 
-You with y4d:
-* can type decorated texts.
+* You can type decorated texts.
     * `*bold*`
     * `/italic/`
     * `_under line_`
     * `-through line-`
     * <code>\`small code\`</code>
-* can use the notation like GitHub to type a highlighted source code.<br>
+* You can use the notation like GitHub for highlighted source codes.<br>
   <pre><code>\`\`\`js
 var hello = "world";
 \`\`\`
-</code></pre>(to see the highlighted source code, requires that viewers use y4d)
-* can convert automatically to multibyte-spaces from spaces and tab-characters
-  on TextArea.<br>
-  So viewers can see the indented source code even if not use y4d.
+</code></pre>(Require y4d in order to see the highlighted source code)
+* To display indents without y4d, y4d converts spaces to multibyte-spaces when
+  submit messages.
+
+Install
+--------------------------------------------------------------------------------
+
+You can install from Chrome Web Store.
+
+https://chrome.google.com/webstore/detail/y4d/emnacjcchajajfmcfhgdfjhodkipafdh
 
 
 Special Thanks
