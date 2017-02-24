@@ -28,7 +28,7 @@ var each = (function () {
 
 (function processOnInserted () {
   var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-  var observingTarget  = document.getElementById('main-column');
+  var observingTargets  = document.getElementsByClassName('yj-thread-list--content yj-feed-messages');
 
   var observer = new MutationObserver(function (mutations) {
     each(mutations, function (mutation) {
@@ -56,8 +56,11 @@ var each = (function () {
     });
   });
 
-  observer.observe(
-    observingTarget,
-    {childList: true, subtree: true}
-  );
+  console.log(observingTargets);
+
+  each(observingTargets, function (observingTarget) {
+    console.log(observingTarget);
+    observer.observe(observingTarget, {childList: true, subtree: true});
+  });
+
 })();
