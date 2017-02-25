@@ -13,22 +13,22 @@ var each = (function () {
 
 
 (function initializeTextArea () {
-  var textarea = document.getElementById('yj-yam.ui.shared.TextAreaMockEditor');
-  if (textarea != null) {
+  var textareas = document.getElementsByClassName('yj-tapf-textarea');
+  each(textareas, function(textarea) {
     PostFormatter.installTo(textarea);
-  }
+  });
 })();
 
 
 (function initializeMessages () {
-  var messages = document.getElementsByClassName('yj-message');
+  var messages = document.getElementsByClassName('yj-message-list-item--body-message');
   each(messages, ContentFormatter.replaceContent);
 })();
 
 
 (function processOnInserted () {
   var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-  var observingTarget  = document.getElementById('main-column');
+  var observingTarget  = document;
 
   var observer = new MutationObserver(function (mutations) {
     each(mutations, function (mutation) {
@@ -44,11 +44,11 @@ var each = (function () {
           }
 
           // on message inserted.
-          if (addedNode.className.indexOf('yj-message') >= 0) {
+          if (addedNode.className.indexOf('yj-message-list-item--body-message') >= 0) {
             ContentFormatter.replaceContent(addedNode);
           }
           else {
-            var messages = addedNode.getElementsByClassName('yj-message');
+            var messages = addedNode.getElementsByClassName('yj-message-list-item--body-message');
             each(messages, ContentFormatter.replaceContent);
           }
         }
@@ -56,8 +56,6 @@ var each = (function () {
     });
   });
 
-  observer.observe(
-    observingTarget,
-    {childList: true, subtree: true}
-  );
+  observer.observe(observingTarget, {childList: true, subtree: true});
+
 })();

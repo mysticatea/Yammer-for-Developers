@@ -198,6 +198,9 @@ var ContentFormatter = {
     var processCodeBlock = function (lang, i, content) {
       // slice `i` to the end of code-block.
       var m = match(rCloseCodeBlock, i, content);
+      if (m == null) {
+        return null;
+      }
       return makePair(
         rCloseCodeBlock.lastIndex - 1,
         wrapTag(
@@ -237,15 +240,17 @@ var ContentFormatter = {
           if (m[1] == null) {
             // found inline special element.
             pair = processInlineElement(m[2], m[3], i, content);
-          }
-          else {
+          } else {
             // found code block.
             pair = processCodeBlock(m[1], i, content);
           }
+          if (pair == null) {
+              result = content;
+              break;
+          }
           result   = result + content.slice(head, m.index) + pair.result;
           i = head = pair.index;
-        }
-        else {
+        } else {
           // rearch the end.
           result   = result + content.slice(head);
           i = head = end;
