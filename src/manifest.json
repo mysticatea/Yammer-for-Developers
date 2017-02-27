@@ -3,7 +3,7 @@
   "name"           : "y4d",
   "description"    : "The code formater and syntax highlighter in Yammer's messages.",
   "icons"          : {"128": "icon_128.png"},
-  "version"        : "0.3.4",
+  "version"        : "0.4.0",
   "default_locale" : "en",
 
   "permissions": [
