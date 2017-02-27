@@ -1,12 +1,7 @@
-Yammer for Developers (y4d)
-================================================================================
+# ![y4d](src/icon_128.png) Yammer for Developers (y4d)
 
-y4d is [Google Chrome Extension](https://developer.chrome.com/extensions/) that
-runs in [Yammer](https://yammer.com/).<br>
-y4d is the code formater and highlighter in Yammer's messages.
-
-We cannot use source codes readable in Yammer's messages (at 2012/11/06).<br>
-So, y4d works to format and highlight in there!
+y4d is [Google Chrome Extension](https://developer.chrome.com/extensions/) that works on [Yammer](https://yammer.com/).<br>
+y4d provides syntax highlight for Yammer messages.
 
 Before is:
 ![Before](https://dl.dropbox.com/u/5739705/y4d/before.png)
@@ -15,10 +10,15 @@ After is:
 ![After](https://dl.dropbox.com/u/5739705/y4d/after.png)
 
 
-Features
---------------------------------------------------------------------------------
+## 💿 Installation
 
-* You can type decorated texts.
+From Chrome Web Store:
+
+- [y4d - Chrome Web Store](https://chrome.google.com/webstore/detail/y4d/emnacjcchajajfmcfhgdfjhodkipafdh)
+
+## 📖 Usage
+
+* You can decorate your messages.
     * `*bold*`
     * `/italic/`
     * `_under line_`
@@ -28,26 +28,23 @@ Features
   <pre><code>\`\`\`js
 var hello = "world";
 \`\`\`
-</code></pre>(Require y4d in order to see the highlighted source code)
-* To display indents without y4d, y4d converts spaces to multibyte-spaces when
-  submit messages.
+</code></pre>
 
-Install
---------------------------------------------------------------------------------
+## ❤ Special Thanks
 
-You can install from Chrome Web Store.
+y4d is using [highlight.js](https://highlightjs.org/) for the syntax highlighting.
 
-https://chrome.google.com/webstore/detail/y4d/emnacjcchajajfmcfhgdfjhodkipafdh
+## 💪 Contributing
 
+Welcome to contributing!
+Please use issues/PRs of GitHub.
 
-Special Thanks
---------------------------------------------------------------------------------
+### Development tools
 
-y4d uses [highlight.js](http://softwaremaniacs.org/soft/highlight/) for the
-syntax highlighting.
+This repository has some npm-scripts.
 
-
-License
---------------------------------------------------------------------------------
-
-(C) 2012, Toru Nagashima, unser MIT License.
+- `npm run build` creates this package into `<root>/y4d`. You can load this `y4d` directory as a chrome extension by Chrome developer tools.
+- `npm run clean` removes temporary directories.
+- `npm run coverage` opens the coverage report of the previous test by your default browser.
+- `npm run watch` creates this package into `<root>/y4d` on every update of source code.
+- `npm test` runs unit tests.
