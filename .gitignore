@@ -1,3 +1,9 @@
 .DS_Store
+/.idea
+/.nyc_output
+/coverage
+/node_modules
+/y4d
+/y4d.crx
 /y4d.pem
-.idea
+/y4d.zip

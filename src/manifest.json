@@ -1,33 +1,24 @@
 {
   "manifest_version": 2,
   "name"           : "y4d",
-  "description"    : "The code formater and highlighter in Yammer's messages.",
+  "description"    : "The code formater and syntax highlighter in Yammer's messages.",
   "icons"          : {"128": "icon_128.png"},
   "version"        : "0.3.4",
   "default_locale" : "en",
 
   "permissions": [
-    "alarms",
     "background",
     "notifications",
-    "*://*.yammer.com/*"
+    "https://*.yammer.com/*",
+    "https://*.assets-yammer.com/*"
   ],
 
   "content_scripts": [
-    {
-      "matches": ["*://*.yammer.com/*"],
-      "css"    : ["lib/vs.css", "y4d.css"],
-      "js"     : ["lib/highlight.pack.js", "lib/ContentFormatter.js", "lib/PostFormatter.js", "y4d.js"]
-    }
+    {"matches": ["https://www.yammer.com/*"], "css": ["content/index.css"], "js": ["content/index.js"]}
   ],
   "background": {
     "persistent": true,
-    "scripts": [
-      "lib/Promise.js",
-      "lib/YammerAPI.js",
-      "lib/NotificationState.js",
-      "message_observer.js"
-    ]
+    "scripts": ["background/index.js"]
   },
-  "options_page": "options.html"
+  "options_page": "options/index.html"
 }

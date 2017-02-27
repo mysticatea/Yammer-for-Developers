@@ -1,0 +1,11 @@
+{
+    "root": true,
+    "extends": ["mysticatea", "mysticatea/browser", "mysticatea/node"],
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "rules": {
+        "new-cap": ["error", {"capIsNewExceptions": ["EventTargetShim"]}],
+        "node/no-unsupported-features": "off"
+    }
+}
