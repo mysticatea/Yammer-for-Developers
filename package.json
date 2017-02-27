@@ -38,7 +38,6 @@
     "build:content:css": "cleancss src/content/index.css -o y4d/content/index.css",
     "build:content:js": "browserify src/content/index.js | babili > y4d/content/index.js",
     "build:options": "browserify src/options/index.js | babili > y4d/options/index.js",
-    "build:finalize": "node scripts/zip.js",
     "clean": "rimraf .nyc_output coverage y4d y4d.zip y4d.crx",
     "codecov": "nyc report -r lcovonly && codecov",
     "coverage": "nyc report -r lcov && opener ./coverage/lcov-report/index.html",
